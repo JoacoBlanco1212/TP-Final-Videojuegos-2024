@@ -7,9 +7,15 @@ public class InteractableObject : MonoBehaviour
     public bool activated;
     public Animator anim;
 
+    private void Awake()
+    {
+        anim = GetComponentInParent<Animator>();    
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame

@@ -12,11 +12,14 @@ public class SentryBotBehavior : MonoBehaviour
     public Transform targetTR;
     public NavMeshAgent agent;
     public bool isArrived;
+    public SentryBotRaycastDetection forro;
+    public GameObject player;
     // Start is called before the first frame update
     
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        forro = GetComponent<SentryBotRaycastDetection>();
     }
     void Start()
     {
@@ -45,6 +48,12 @@ public class SentryBotBehavior : MonoBehaviour
                 }
             }
             agent.destination = waypoints[currentWaypoint].position;
+        }
+
+        if (forro.hasDetectedPlayer)
+        {
+            agent.destination = player.transform.position;
+   
         }
     }
 }
