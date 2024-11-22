@@ -15,7 +15,7 @@ public class InteractableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        activated = false;
     }
 
     // Update is called once per frame
